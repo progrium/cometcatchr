@@ -1,13 +1,13 @@
-CometCatcher
-============
+CometCatchr
+===========
 
 An opinionated Comet stream client in Flash to be used by Javascript.
 
-You embed CometCatcher and specify a URL and a Javascript callback. It connects 
+You embed CometCatchr and specify a URL and a Javascript callback. It connects 
 to the URL and listens for JSON data (expecting Transfer-Type: chunked). When 
 it receives JSON, it parses it and passes it to you via your callback.
 
-Using CometCatcher, you don't need to use complicated JS libraries and hacks 
+Using CometCatchr, you don't need to use complicated JS libraries and hacks 
 for cross-browser, cross-domain Comet support. It also doesn't rely on long-
 polling. It always uses a persistent socket connection.
 
@@ -32,7 +32,7 @@ Just embed it as you would any Flash, passing it these parameters:
 	pluginspage="http://www.adobe.com/go/getflashplayer">
 </embed>  
 
-This example ignores the <object> tag for clarity. You'll need that as usual.
+This example ignores the common use of <object> just to avoid redundancy.
 
 Notes
 =====
