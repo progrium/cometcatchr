@@ -13,7 +13,7 @@ package {
 	import org.httpclient.HttpClient;
 	import org.httpclient.events.*;
 
-	public class CometCatcher extends Sprite
+	public class CometCatchr extends Sprite
 	{	
 		private var params:Object;
 		private var client:HttpClient;
@@ -22,7 +22,7 @@ package {
 		private var retry:Number = 1;
 		private var maxRetries:Number = 3;
 		
-		public function CometCatcher()
+		public function CometCatchr()
 		{
 			// Load params
 			params = LoaderInfo(this.root.loaderInfo).parameters;
@@ -38,7 +38,7 @@ package {
 			
 			// Set up logger
 			if (params.logger) {
-				log = function(msg:String):void { ExternalInterface.call(params.logger, "CometCatcher: " + msg); };
+				log = function(msg:String):void { ExternalInterface.call(params.logger, "CometCatchr: " + msg); };
 			} else {
 				log = trace;
 			}
