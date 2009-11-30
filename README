@@ -39,7 +39,12 @@ Notes
 
 You need to host the SWF on the same domain as the HTML that embeds it. For 
 local debugging, you need to run on localhost, not file:/// or it doesn't
-work. It uses a Flash socket, so providing cross-domain policy is up to  you.
+work. It uses a Flash socket, so providing cross-domain policy is up to you.
+
+Also, the server response this expects pretty much matches Twitter's
+stream API exactly. If they had a crossdomain.xml file or policy socket
+server, you could just point CometCatcher right at one of their stream 
+endpoints, like: http://user:pass@stream.twitter.com/1/statuses/sample.json
 
 Author
 ======
