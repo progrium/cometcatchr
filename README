@@ -1,0 +1,52 @@
+CometCatcher
+============
+
+An opinionated Comet stream client in Flash to be used by Javascript.
+
+You embed CometCatcher and specify a URL and a Javascript callback. It connects 
+to the URL and listens for JSON data (expecting Transfer-Type: chunked). When 
+it receives JSON, it parses it and passes it to you via your callback.
+
+Using CometCatcher, you don't need to use complicated JS libraries and hacks 
+for cross-browser, cross-domain Comet support. It also doesn't rely on long-
+polling. It always uses a persistent socket connection.
+
+Using CometCatcher
+==================
+
+Just embed it as you would any Flash, passing it these parameters:
+
+ * url 		- Required. A URL to connect to.
+ * callback - Required. A Javascript function to pass JSON to.
+ * logger	- Optional. A function to pass log/debug data to.
+ * retry	- Optional. Number of retries to attempt. Default: 3
+ * policy	- Optional. Explicit location of cross-domain policy file
+ 
+ Example using Firebug console for callback and logger:
+ 
+ <embed src="bin-release/CometCatcher.swf?url=http://example.com/stream-provider&callback=console.log&logger=console.log" 
+ 	width="0" 
+ 	height="0" 
+ 	allowScriptAccess="sameDomain"
+	type="application/x-shockwave-flash"
+	pluginspage="http://www.adobe.com/go/getflashplayer">
+</embed>  
+
+This example ignores the <object> tag for clarity. You'll need that as usual.
+
+Notes
+=====
+
+You need to host the SWF on the same domain as the HTML that embeds it. For 
+local debugging, you need to run on localhost, not file:/// or it doesn't
+work. It uses a Flash socket, so providing cross-domain policy is up to  you.
+
+Author
+======
+
+Jeff Lindsay <progrium@gmail.com>
+
+License
+=======
+
+MIT
