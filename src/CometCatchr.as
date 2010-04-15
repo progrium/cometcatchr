@@ -12,6 +12,8 @@ package {
 	
 	import org.httpclient.HttpClient;
 	import org.httpclient.events.*;
+	
+	import mx.core.Application;
 
 	public class CometCatchr extends Sprite
 	{	
@@ -22,10 +24,10 @@ package {
 		private var retry:Number = 1;
 		private var maxRetries:Number = 3;
 		
-		public function CometCatchr()
+		public function CometCatchr(app:Application)
 		{
 			// Load params
-			params = LoaderInfo(this.root.loaderInfo).parameters;
+			params = app.parameters;
 			
 			// Load values from params if specified
 			if (params.policy) { Security.loadPolicyFile(params.policy); }
